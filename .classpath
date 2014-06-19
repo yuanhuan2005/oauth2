@@ -33,25 +33,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/yuanhuan/.m2/repository/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
-			<attribute name="maven.groupId" value="org.apache.httpcomponents"/>
-			<attribute name="maven.artifactId" value="httpcore"/>
-			<attribute name="maven.version" value="4.3.2"/>
-			<attribute name="maven.scope" value="test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/yuanhuan/.m2/repository/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
-			<attribute name="maven.groupId" value="org.apache.httpcomponents"/>
-			<attribute name="maven.artifactId" value="httpclient"/>
-			<attribute name="maven.version" value="4.3.3"/>
-			<attribute name="maven.scope" value="test"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
