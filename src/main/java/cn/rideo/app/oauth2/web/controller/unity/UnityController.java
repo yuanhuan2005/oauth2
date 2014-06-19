@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/unity/")
 public class UnityController {
 
-
     @RequestMapping("dashboard.htm")
     public String dashboard() {
         return "unity/dashboard";
