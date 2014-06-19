@@ -8,7 +8,6 @@
         </encoder>
     </appender>
 
-
     <!--springframework package level: WARN-->
     <logger name="org.springframework" level="WARN"/>
 
