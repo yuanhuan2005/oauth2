@@ -1,12 +1,10 @@
 package cc.wdcy.domain.user;
 
-import cc.wdcy.domain.shared.Repository;
-
 /**
  * @author Shengzhao Li
  */
 
-public interface UserRepository extends Repository {
+public interface UserRepository{
 
     User findByGuid(String guid);
 

@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * @author Shengzhao Li
  */
-public class WdcyUserDetails implements UserDetails {
+public class AppUserDetails implements UserDetails {
 
     protected static final String ROLE_PREFIX = "ROLE_";
     protected static final GrantedAuthority DEFAULT_USER_ROLE = new SimpleGrantedAuthority(ROLE_PREFIX + "USER");
@@ -19,10 +19,10 @@ public class WdcyUserDetails implements UserDetails {
     protected User user;
 
 
-    public WdcyUserDetails() {
+    public AppUserDetails() {
     }
 
-    public WdcyUserDetails(User user) {
+    public AppUserDetails(User user) {
         this.user = user;
     }
 

@@ -1,22 +1,24 @@
 package cc.wdcy.domain;
 
-import cc.wdcy.infrastructure.DateUtils;
 import cc.wdcy.domain.shared.GuidGenerator;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author Shengzhao Li
- */
 public abstract class AbstractDomain implements Serializable {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Database id
      */
     protected int id;
 
     protected boolean archived;
+    
     /**
      * Domain business guid.
      */
@@ -25,7 +27,7 @@ public abstract class AbstractDomain implements Serializable {
     /**
      * The domain create time.
      */
-    protected Date createTime = DateUtils.now();
+    protected Date createTime = new Date();
 
     public AbstractDomain() {
     }

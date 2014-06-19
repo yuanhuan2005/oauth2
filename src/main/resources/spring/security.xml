@@ -85,7 +85,7 @@
 
     <!--</oauth2:client-details-service>-->
 
-    <beans:bean id="clientDetailsService" class="cc.wdcy.domain.oauth.CustomJdbcClientDetailsService">
+    <beans:bean id="clientDetailsService" class="org.springframework.security.oauth2.provider.client.JdbcClientDetailsService">
         <beans:constructor-arg index="0" ref="dataSource"/>
     </beans:bean>
     
@@ -112,12 +112,13 @@
     <!--<oauth2:expression-handler id="oauth2ExpressionHandler"/>-->
     <!--<oauth2:web-expression-handler id="oauth2WebExpressionHandler"/>-->
 
-    <beans:bean id="oauthUserApprovalHandler" class="cc.wdcy.web.oauth.OauthUserApprovalHandler">
+    <!--<beans:bean id="oauthUserApprovalHandler" class="cc.wdcy.web.oauth.OauthUserApprovalHandler">-->
+    <beans:bean id="oauthUserApprovalHandler" class="org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler">
         <!-- <beans:property name="tokenServices" ref="tokenServices"/> -->
         <beans:property name="tokenStore" ref="tokenStore"/>
         <beans:property name="clientDetailsService" ref="clientDetailsService"/>
         <beans:property name="requestFactory" ref="requestFactory"/>
-        <beans:property name="oauthService" ref="oauthService"/>
+        <!--<beans:property name="oauthService" ref="oauthService"/>-->
     </beans:bean>
 
     <oauth2:authorization-server client-details-service-ref="clientDetailsService" token-services-ref="tokenServices"
