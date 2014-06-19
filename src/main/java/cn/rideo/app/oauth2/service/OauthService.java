@@ -1,6 +1,6 @@
 package cn.rideo.app.oauth2.service;
 
-import cn.rideo.app.oauth2.domain.oauth.OauthClientDetails;
+import cn.rideo.app.oauth2.domain.OauthClientDetails;
 
 /**
  * @author Shengzhao Li

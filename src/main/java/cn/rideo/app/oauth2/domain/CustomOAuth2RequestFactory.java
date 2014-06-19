@@ -1,4 +1,4 @@
-package cn.rideo.app.oauth2.domain.oauth;
+package cn.rideo.app.oauth2.domain;
 
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;

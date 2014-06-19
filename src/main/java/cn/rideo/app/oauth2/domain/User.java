@@ -1,6 +1,4 @@
-package cn.rideo.app.oauth2.domain.user;
-
-import cn.rideo.app.oauth2.domain.AbstractDomain;
+package cn.rideo.app.oauth2.domain;
 
 import java.util.Date;
 

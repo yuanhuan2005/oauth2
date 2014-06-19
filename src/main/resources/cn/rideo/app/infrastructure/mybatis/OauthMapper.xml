@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="cn.rideo.app.oauth2.infrastructure.mybatis.OauthRepositoryMyBatis">
+<mapper namespace="cn.rideo.app.oauth2.infrastructure.OauthRepositoryMyBatis">
 
     <resultMap type="OauthClientDetails" id="oauthClientDetailsMap">
         <id property="clientId" column="client_id"/>

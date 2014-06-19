@@ -1,4 +1,4 @@
-package cn.rideo.app.oauth2.domain.oauth;
+package cn.rideo.app.oauth2.domain;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,8 +1,9 @@
 package cn.rideo.app.oauth2.service.impl;
 
-import cn.rideo.app.oauth2.domain.oauth.OauthClientDetails;
-import cn.rideo.app.oauth2.domain.oauth.OauthRepository;
+import cn.rideo.app.oauth2.domain.OauthClientDetails;
+import cn.rideo.app.oauth2.domain.OauthRepository;
 import cn.rideo.app.oauth2.service.OauthService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

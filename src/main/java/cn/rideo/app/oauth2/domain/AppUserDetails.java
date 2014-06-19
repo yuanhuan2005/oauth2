@@ -1,6 +1,5 @@
-package cn.rideo.app.oauth2.domain.shared.security;
+package cn.rideo.app.oauth2.domain;
 
-import cn.rideo.app.oauth2.domain.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

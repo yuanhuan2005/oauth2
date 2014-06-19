@@ -1,4 +1,4 @@
-package cn.rideo.app.oauth2.domain.oauth;
+package cn.rideo.app.oauth2.domain;
 
 /**
  * @author Shengzhao Li

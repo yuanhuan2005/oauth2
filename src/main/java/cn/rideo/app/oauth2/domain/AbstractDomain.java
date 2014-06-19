@@ -1,7 +1,5 @@
 package cn.rideo.app.oauth2.domain;
 
-import cn.rideo.app.oauth2.domain.shared.GuidGenerator;
-
 import java.io.Serializable;
 import java.util.Date;
 

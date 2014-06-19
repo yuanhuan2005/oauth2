@@ -9,8 +9,8 @@
         <setting name="useGeneratedKeys" value="true"/>
     </settings>
     <typeAliases>
-        <typeAlias alias="User" type="cn.rideo.app.oauth2.domain.user.User"/>
-        <typeAlias alias="OauthClientDetails" type="cn.rideo.app.oauth2.domain.oauth.OauthClientDetails"/>
+        <typeAlias alias="User" type="cn.rideo.app.oauth2.domain.User"/>
+        <typeAlias alias="OauthClientDetails" type="cn.rideo.app.oauth2.domain.OauthClientDetails"/>
 
     </typeAliases>
 

@@ -1,4 +1,4 @@
-package cn.rideo.app.oauth2.domain.shared;
+package cn.rideo.app.oauth2.domain;
 
 import java.util.UUID;
 

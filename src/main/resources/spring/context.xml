@@ -57,7 +57,7 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.rideo.app.oauth2.infrastructure.mybatis"/>
+        <property name="basePackage" value="cn.rideo.app.oauth2.infrastructure"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
