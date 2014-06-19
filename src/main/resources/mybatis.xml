@@ -9,14 +9,14 @@
         <setting name="useGeneratedKeys" value="true"/>
     </settings>
     <typeAliases>
-        <typeAlias alias="User" type="cc.wdcy.domain.user.User"/>
-        <typeAlias alias="OauthClientDetails" type="cc.wdcy.domain.oauth.OauthClientDetails"/>
+        <typeAlias alias="User" type="cn.rideo.app.oauth2.domain.user.User"/>
+        <typeAlias alias="OauthClientDetails" type="cn.rideo.app.oauth2.domain.oauth.OauthClientDetails"/>
 
     </typeAliases>
 
     <mappers>
-        <mapper resource="cc/wdcy/infrastructure/mybatis/UserMapper.xml"/>
-        <mapper resource="cc/wdcy/infrastructure/mybatis/OauthMapper.xml"/>
+        <mapper resource="cn/rideo/app/infrastructure/mybatis/UserMapper.xml"/>
+        <mapper resource="cn/rideo/app/infrastructure/mybatis/OauthMapper.xml"/>
 
     </mappers>
 

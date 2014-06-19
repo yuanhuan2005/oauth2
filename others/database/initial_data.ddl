@@ -2,7 +2,7 @@
 -- admin, password is admin
 insert into user_(id,guid,create_time,email,password,phone,username,default_user)
 values
-(21,'29f6004fb1b0466f9572b02bf2ac1be8',now(),'admin@wdcy.cc','21232f297a57a5a743894a0e4a801fc3','028-1234567','admin',true);
+(21,'29f6004fb1b0466f9572b02bf2ac1be8',now(),'admin@app.rideo.cm','21232f297a57a5a743894a0e4a801fc3','028-1234567','admin',true);
 
 
 -- initial oauth client details test data

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>wdcy.cc</groupId>
+    <groupId>app.rideo.cn</groupId>
     <artifactId>oauth2</artifactId>
     <version>1.0</version>
     <name>oauth2</name>
@@ -46,10 +46,10 @@
                                 ${project.version}
                             </Implementation-BuildNumber>
                             <Specification-Vendor>
-                                wdcy.cc
+                                app.rideo.cn
                             </Specification-Vendor>
                             <Implementation-Vendor>
-                                wdcy.cc
+                                app.rideo.cn
                             </Implementation-Vendor>
                             <Implementation-Title>
                                 ${project.name}
