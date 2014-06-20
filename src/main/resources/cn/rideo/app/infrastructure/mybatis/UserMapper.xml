@@ -25,28 +25,28 @@
 
 
     <select id="findByGuid" parameterType="String" resultMap="userMap">
-         select * from user_ where  guid = #{guid}
+         select * from user where  guid = #{guid}
 	</select>
 
     <select id="findUserById" parameterType="Integer" resultMap="userMap">
-         select * from user_ where id = #{id}
+         select * from user where id = #{id}
 	</select>
 
     <select id="findByUsername" parameterType="String" resultMap="userMap">
-         select * from user_
+         select * from user
          where username = #{username}
          and archived = 0
 	</select>
 
 
     <insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-        insert into user_(guid,archived,create_time,email,password,username,phone, last_login_time)
+        insert into user(guid,archived,create_time,email,password,username,phone, last_login_time)
         values
         (#{guid},#{archived},#{createTime},#{email},#{password},#{username}, #{phone}, #{lastLoginTime})
     </insert>
 
     <update id="updateUser" parameterType="User" flushCache="true">
-        update user_ set
+        update user set
         username = #{username},
         password = #{password},
         phone = #{phone},

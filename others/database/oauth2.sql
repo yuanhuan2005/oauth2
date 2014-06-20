@@ -128,11 +128,11 @@ CREATE TABLE `oauth_refresh_token` (
 
 /*Data for the table `oauth_refresh_token` */
 
-/*Table structure for table `user_` */
+/*Table structure for table `user` */
 
-DROP TABLE IF EXISTS `user_`;
+DROP TABLE IF EXISTS `user`;
 
-CREATE TABLE `user_` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `guid` varchar(255) NOT NULL,
   `create_time` datetime DEFAULT NULL,
@@ -148,9 +148,9 @@ CREATE TABLE `user_` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
-/*Data for the table `user_` */
+/*Data for the table `user` */
 
-insert  into `user_`(`id`,`guid`,`create_time`,`archived`,`email`,`password`,`phone`,`username`,`default_user`,`last_login_time`) values (21,'29f6004fb1b0466f9572b02bf2ac1be8','2014-06-19 12:15:46',0,'admin@wdcy.cc','21232f297a57a5a743894a0e4a801fc3','028-1234567','admin',1,NULL);
+insert  into `user`(`id`,`guid`,`create_time`,`archived`,`email`,`password`,`phone`,`username`,`default_user`,`last_login_time`) values (21,'29f6004fb1b0466f9572b02bf2ac1be8','2014-06-19 12:15:46',0,'admin@wdcy.cc','21232f297a57a5a743894a0e4a801fc3','028-1234567','admin',1,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
