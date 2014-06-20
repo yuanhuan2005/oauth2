@@ -1,22 +1,23 @@
-package cn.rideo.app.oauth2.domain;
+package com.rideo.app.oauth2.domain;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public abstract class AbstractDomain implements Serializable {
+public abstract class AbstractDomain implements Serializable
+{
 
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
+    /**
      * Database id
      */
     protected int id;
 
     protected boolean archived;
-    
+
     /**
      * Domain business guid.
      */
@@ -27,48 +28,60 @@ public abstract class AbstractDomain implements Serializable {
      */
     protected Date createTime = new Date();
 
-    public AbstractDomain() {
+    public AbstractDomain()
+    {
     }
 
-    public int id() {
+    public int id()
+    {
         return id;
     }
 
-    public void id(int id) {
+    public void id(int id)
+    {
         this.id = id;
     }
 
-    public boolean archived() {
+    public boolean archived()
+    {
         return archived;
     }
 
-    public AbstractDomain archived(boolean archived) {
+    public AbstractDomain archived(boolean archived)
+    {
         this.archived = archived;
         return this;
     }
 
-    public String guid() {
+    public String guid()
+    {
         return guid;
     }
 
-    public void guid(String guid) {
+    public void guid(String guid)
+    {
         this.guid = guid;
     }
 
-    public Date createTime() {
+    public Date createTime()
+    {
         return createTime;
     }
 
-    public boolean isNewly() {
+    public boolean isNewly()
+    {
         return id == 0;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
             return true;
         }
-        if (!(o instanceof AbstractDomain)) {
+        if (!(o instanceof AbstractDomain))
+        {
             return false;
         }
         AbstractDomain that = (AbstractDomain) o;
@@ -76,16 +89,19 @@ public abstract class AbstractDomain implements Serializable {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return guid.hashCode();
     }
 
-    //For subclass override it
-    public void saveOrUpdate() {
+    // For subclass override it
+    public void saveOrUpdate()
+    {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         final StringBuilder sb = new StringBuilder();
         sb.append("{id=").append(id);
         sb.append(", archived=").append(archived);

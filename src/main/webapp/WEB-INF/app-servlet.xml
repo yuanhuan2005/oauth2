@@ -12,7 +12,7 @@
 
     <!--annotation configuration -->
     <context:annotation-config/>
-    <context:component-scan base-package="cn.rideo.app.oauth2.web"/>
+    <context:component-scan base-package="com.rideo.app.oauth2.web"/>
 
     <!--static resource-->
     <mvc:resources mapping="/index.jsp*" location="/index.jsp"/>

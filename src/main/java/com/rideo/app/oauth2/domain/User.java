@@ -1,60 +1,68 @@
-package cn.rideo.app.oauth2.domain;
+package com.rideo.app.oauth2.domain;
 
 import java.util.Date;
 
 /**
  * @author Shengzhao Li
  */
-public class User extends AbstractDomain {
-
+public class User extends AbstractDomain
+{
 
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
-	private String username;
+    private static final long serialVersionUID = 1L;
+
+    private String username;
     private String password;
 
     private String phone;
     private String email;
-    //Default user is initial when create database, do not delete
-    private boolean defaultUser = false;
+    // Default user is initial when create database, do not delete
+    private final boolean defaultUser = false;
 
     private Date lastLoginTime;
 
-    public User() {
+    public User()
+    {
     }
 
-    public User(String username, String password, String phone, String email) {
+    public User(String username, String password, String phone, String email)
+    {
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
     }
 
-    public boolean defaultUser() {
+    public boolean defaultUser()
+    {
         return defaultUser;
     }
 
-    public String username() {
+    public String username()
+    {
         return username;
     }
 
-    public String password() {
+    public String password()
+    {
         return password;
     }
 
-    public String phone() {
+    public String phone()
+    {
         return phone;
     }
 
-    public String email() {
+    public String email()
+    {
         return email;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         final StringBuilder sb = new StringBuilder();
         sb.append("{username='").append(username).append('\'');
         sb.append(", phone='").append(phone).append('\'');
@@ -66,29 +74,31 @@ public class User extends AbstractDomain {
         return sb.toString();
     }
 
-    public User email(String email) {
+    public User email(String email)
+    {
         this.email = email;
         return this;
     }
 
-    public User phone(String phone) {
+    public User phone(String phone)
+    {
         this.phone = phone;
         return this;
     }
 
-
-    public User username(String username) {
+    public User username(String username)
+    {
         this.username = username;
         return this;
     }
 
-
-
-    public Date lastLoginTime() {
+    public Date lastLoginTime()
+    {
         return lastLoginTime;
     }
 
-    public void lastLoginTime(Date lastLoginTime) {
+    public void lastLoginTime(Date lastLoginTime)
+    {
         this.lastLoginTime = lastLoginTime;
     }
 }

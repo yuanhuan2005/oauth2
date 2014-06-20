@@ -90,7 +90,7 @@
     </beans:bean>
     
 
-    <beans:bean id="requestFactory" class="cn.rideo.app.oauth2.domain.CustomOAuth2RequestFactory">
+    <beans:bean id="requestFactory" class="com.rideo.app.oauth2.domain.CustomOAuth2RequestFactory">
         <beans:constructor-arg index="0" ref="clientDetailsService"/>
     </beans:bean>
 
@@ -112,7 +112,7 @@
     <!--<oauth2:expression-handler id="oauth2ExpressionHandler"/>-->
     <!--<oauth2:web-expression-handler id="oauth2WebExpressionHandler"/>-->
 
-    <!--<beans:bean id="oauthUserApprovalHandler" class="cn.rideo.app.oauth2.web.oauth.OauthUserApprovalHandler">-->
+    <!--<beans:bean id="oauthUserApprovalHandler" class="com.rideo.app.oauth2.web.oauth.OauthUserApprovalHandler">-->
     <beans:bean id="oauthUserApprovalHandler" class="org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler">
         <!-- <beans:property name="tokenServices" ref="tokenServices"/> -->
         <beans:property name="tokenStore" ref="tokenStore"/>

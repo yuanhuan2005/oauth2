@@ -10,7 +10,7 @@
 
     <!--annotation configuration -->
     <context:annotation-config/>
-    <context:component-scan base-package="cn.rideo.app.oauth2.service"/>
+    <context:component-scan base-package="com.rideo.app.oauth2.service"/>
 
     <!-- property configuration -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -57,7 +57,7 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.rideo.app.oauth2.infrastructure"/>
+        <property name="basePackage" value="com.rideo.app.oauth2.infrastructure"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

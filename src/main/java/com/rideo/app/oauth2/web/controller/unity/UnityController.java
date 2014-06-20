@@ -1,4 +1,4 @@
-package cn.rideo.app.oauth2.web.controller.unity;
+package com.rideo.app.oauth2.web.controller.unity;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/unity/")
-public class UnityController {
+public class UnityController
+{
 
     @RequestMapping("dashboard.htm")
-    public String dashboard() {
+    public String dashboard()
+    {
         return "unity/dashboard";
     }
 

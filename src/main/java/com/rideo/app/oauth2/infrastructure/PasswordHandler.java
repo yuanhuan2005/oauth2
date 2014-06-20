@@ -1,4 +1,4 @@
-package cn.rideo.app.oauth2.infrastructure;
+package com.rideo.app.oauth2.infrastructure;
 
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 

@@ -1,10 +1,11 @@
-package cn.rideo.app.oauth2.domain;
+package com.rideo.app.oauth2.domain;
 
 /**
  * @author Shengzhao Li
  */
 
-public interface UserRepository{
+public interface UserRepository
+{
 
     User findByGuid(String guid);
 
