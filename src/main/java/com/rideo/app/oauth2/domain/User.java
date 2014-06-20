@@ -7,10 +7,6 @@ import java.util.Date;
  */
 public class User extends AbstractDomain
 {
-
-    /**
-	 * 
-	 */
     private static final long serialVersionUID = 1L;
 
     private String username;
