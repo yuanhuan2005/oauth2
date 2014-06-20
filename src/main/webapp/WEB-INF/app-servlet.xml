@@ -6,15 +6,42 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+<context:property-placeholder location="classpath*:META-INF/spring/*.properties" />
+
+    <!-- The controllers are autodetected POJOs labeled with the @Controller 
+        annotation. -->
+    <context:component-scan base-package="com.rideo.app"
+        use-default-filters="false">
+        <context:include-filter expression="org.springframework.stereotype.Controller"
+            type="annotation" />
+    </context:component-scan>
+
+    <!-- Turns on support for mapping requests to Spring MVC @Controller methods 
+        Also registers default Formatters and Validators for use across all @Controllers -->
+    <mvc:annotation-driven>
+        <!-- Overriding the message converter setting to allow StringHttpMessageConverter 
+            to produce application/json message. -->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
 
     <!--<import resource="security.xml"/>-->
 
-    <!--annotation configuration -->
+    <!--annotation configuration
     <context:annotation-config/>
-    <context:component-scan base-package="com.rideo.app.oauth2.web"/>
+    <context:component-scan base-package="com.rideo.app.oauth2.controller"/> -->
 
-    <!--static resource-->
+    <!--static resource
     <mvc:resources mapping="/index.jsp*" location="/index.jsp"/>
 
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
@@ -22,12 +49,12 @@
     </bean>
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
     </bean>
-
+    
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
+ -->
 
 </beans>

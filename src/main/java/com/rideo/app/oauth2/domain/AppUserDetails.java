@@ -43,13 +43,13 @@ public class AppUserDetails implements UserDetails
     @Override
     public String getPassword()
     {
-        return user.password();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername()
     {
-        return user.username();
+        return user.getUsername();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AppUserDetails implements UserDetails
         return true;
     }
 
-    public User user()
+    public User getUser()
     {
         return user;
     }

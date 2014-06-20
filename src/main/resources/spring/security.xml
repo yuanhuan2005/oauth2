@@ -48,14 +48,14 @@
         <access-denied-handler ref="oauth2AccessDeniedHandler"/>
     </http>
 
-    <!--mobile http configuration-->
-    <http pattern="/m/**" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
+    <!--user http configuration-->
+    <http pattern="/user/**" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
           access-decision-manager-ref="oauth2AccessDecisionManager">
         <anonymous enabled="false"/>
 
-        <intercept-url pattern="/m/**" access="ROLE_MOBILE,SCOPE_READ"/>
+        <intercept-url pattern="/user/**" access="ROLE_UNITY,SCOPE_READ"/>
 
-        <custom-filter ref="mobileResourceServer" before="PRE_AUTH_FILTER"/>
+        <custom-filter ref="userResourceServer" before="PRE_AUTH_FILTER"/>
         <access-denied-handler ref="oauth2AccessDeniedHandler"/>
     </http>
 
@@ -67,8 +67,8 @@
     <!--unity resource server filter-->
     <oauth2:resource-server id="unityResourceServer" resource-id="unity-resource" token-services-ref="tokenServices"/>
 
-    <!--mobile resource server filter-->
-    <oauth2:resource-server id="mobileResourceServer" resource-id="mobile-resource" token-services-ref="tokenServices"/>
+    <!--user resource server filter-->
+    <oauth2:resource-server id="userResourceServer" resource-id="user-resource" token-services-ref="tokenServices"/>
 
     <!--Config ClientDetailsService-->
     <!--<oauth2:client-details-service id="clientDetailsService">-->

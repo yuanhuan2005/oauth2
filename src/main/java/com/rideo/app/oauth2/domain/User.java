@@ -1,100 +1,150 @@
 package com.rideo.app.oauth2.domain;
 
-import java.util.Date;
-
-/**
- * @author Shengzhao Li
- */
 public class User extends AbstractDomain
 {
     private static final long serialVersionUID = 1L;
 
+    private String userId;
     private String username;
+    private String nickname;
+    private String userImage;
+    private int age;
+    private int gender;
+    private String phoneNumber;
+    private String email;
+    private String userType;
+    private String thirdPartyUserId;
+    private String registerDate;
     private String password;
 
-    private String phone;
-    private String email;
-    // Default user is initial when create database, do not delete
-    private final boolean defaultUser = false;
-
-    private Date lastLoginTime;
-
-    public User()
+    public String getUserId()
     {
+        return userId;
     }
 
-    public User(String username, String password, String phone, String email)
+    public void setUserId(String userId)
     {
-        this.username = username;
-        this.password = password;
-        this.phone = phone;
-        this.email = email;
+        this.userId = userId;
     }
 
-    public boolean defaultUser()
-    {
-        return defaultUser;
-    }
-
-    public String username()
+    public String getUsername()
     {
         return username;
     }
 
-    public String password()
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public String getNickname()
+    {
+        return nickname;
+    }
+
+    public void setNickname(String nickname)
+    {
+        this.nickname = nickname;
+    }
+
+    public String getUserImage()
+    {
+        return userImage;
+    }
+
+    public void setUserImage(String userImage)
+    {
+        this.userImage = userImage;
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+
+    public int getGender()
+    {
+        return gender;
+    }
+
+    public void setGender(int gender)
+    {
+        this.gender = gender;
+    }
+
+    public String getPhoneNumber()
+    {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public String getUserType()
+    {
+        return userType;
+    }
+
+    public void setUserType(String userType)
+    {
+        this.userType = userType;
+    }
+
+    public String getThirdPartyUserId()
+    {
+        return thirdPartyUserId;
+    }
+
+    public void setThirdPartyUserId(String thirdPartyUserId)
+    {
+        this.thirdPartyUserId = thirdPartyUserId;
+    }
+
+    public String getRegisterDate()
+    {
+        return registerDate;
+    }
+
+    public void setRegisterDate(String registerDate)
+    {
+        this.registerDate = registerDate;
+    }
+
+    public String getPassword()
     {
         return password;
     }
 
-    public String phone()
+    public void setPassword(String password)
     {
-        return phone;
-    }
-
-    public String email()
-    {
-        return email;
+        this.password = password;
     }
 
     @Override
     public String toString()
     {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("{username='").append(username).append('\'');
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", id='").append(id).append('\'');
-        sb.append(", guid='").append(guid).append('\'');
-        sb.append(", defaultUser='").append(defaultUser).append('\'');
-        sb.append(", email='").append(email).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "User [userId=" + userId + ", username=" + username + ", nickname=" + nickname
+                + ", userImage=" + userImage + ", age=" + age + ", gender=" + gender
+                + ", phoneNumber=" + phoneNumber + ", email=" + email + ", userType=" + userType
+                + ", thirdPartyUserId=" + thirdPartyUserId + ", registerDate=" + registerDate
+                + ", password=" + password + "]";
     }
 
-    public User email(String email)
-    {
-        this.email = email;
-        return this;
-    }
-
-    public User phone(String phone)
-    {
-        this.phone = phone;
-        return this;
-    }
-
-    public User username(String username)
-    {
-        this.username = username;
-        return this;
-    }
-
-    public Date lastLoginTime()
-    {
-        return lastLoginTime;
-    }
-
-    public void lastLoginTime(Date lastLoginTime)
-    {
-        this.lastLoginTime = lastLoginTime;
-    }
 }

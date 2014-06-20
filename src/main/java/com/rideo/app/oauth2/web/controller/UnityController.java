@@ -1,4 +1,4 @@
-package com.rideo.app.oauth2.web.controller.unity;
+package com.rideo.app.oauth2.web.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rideo.app.oauth2.domain.AppUserDetails;
 
-/**
- * @author Shengzhao Li
- */
 @Controller
 @RequestMapping("/unity/")
 public class UnityController

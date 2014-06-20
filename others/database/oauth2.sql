@@ -133,24 +133,24 @@ CREATE TABLE `oauth_refresh_token` (
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `guid` varchar(255) NOT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `archived` tinyint(1) DEFAULT '0',
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone` varchar(255) DEFAULT NULL,
+  `userId` varchar(128) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `default_user` tinyint(1) DEFAULT '0',
-  `last_login_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `guid` (`guid`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+  `nickname` varchar(255) DEFAULT NULL,
+  `userImage` varchar(255) DEFAULT NULL,
+  `age` tinyint(4) DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT NULL,
+  `phoneNumber` varchar(32) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `userType` varchar(16) NOT NULL,
+  `thirdPartyUserId` varchar(255) DEFAULT NULL,
+  `registerDate` varchar(32) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  UNIQUE KEY `username` (`gender`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`guid`,`create_time`,`archived`,`email`,`password`,`phone`,`username`,`default_user`,`last_login_time`) values (21,'29f6004fb1b0466f9572b02bf2ac1be8','2014-06-19 12:15:46',0,'admin@wdcy.cc','21232f297a57a5a743894a0e4a801fc3','028-1234567','admin',1,NULL);
+insert  into `user`(`userId`,`username`,`nickname`,`userImage`,`age`,`gender`,`phoneNumber`,`email`,`userType`,`thirdPartyUserId`,`registerDate`,`password`) values ('610d17b9-d3d5-4ae6-98da-db51a2fcccf0','admin','admin','http://image.rideo.cn/user/21.png',28,1,'13566668888','admin@tcl.com','rideo',NULL,'2014-03-28T14:48:31Z','21232f297a57a5a743894a0e4a801fc3');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

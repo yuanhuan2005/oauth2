@@ -15,8 +15,8 @@
     </typeAliases>
 
     <mappers>
-        <mapper resource="cn/rideo/app/infrastructure/mybatis/UserMapper.xml"/>
-        <mapper resource="cn/rideo/app/infrastructure/mybatis/OauthMapper.xml"/>
+        <mapper resource="com/rideo/app/infrastructure/mybatis/UserMapper.xml"/>
+        <mapper resource="com/rideo/app/infrastructure/mybatis/OauthMapper.xml"/>
 
     </mappers>
 

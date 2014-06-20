@@ -4,54 +4,48 @@
 <mapper namespace="com.rideo.app.oauth2.infrastructure.UserRepositoryMyBatis">
 
     <resultMap type="User" id="userMap">
-        <id property="id" column="id"/>
-        <result property="guid" column="guid"/>
-        <result property="archived" column="archived"/>
-        <result property="createTime" column="create_time"/>
-
-        <result property="email" column="email"/>
-        <result property="phone" column="phone"/>
-        <result property="defaultUser" column="default_user"/>
-
-        <result property="password" column="password"/>
+    
+        <id property="userId" column="userId"/>
         <result property="username" column="username"/>
-        <result property="lastLoginTime" column="last_login_time"/>
+        <result property="nickname" column="nickname"/>
+        <result property="userImage" column="userImage"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+        <result property="phoneNumber" column="phoneNumber"/>
+        <result property="email" column="email"/>
+        <result property="userType" column="userType"/>
+        <result property="thirdPartyUserId" column="thirdPartyUserId"/>
+        <result property="registerDate" column="registerDate"/>
+        <result property="password" column="password"/>
 
-        <!--<discriminator column="type_" javaType="String">-->
-        <!--<case value="Developer"-->
-        <!--resultMap="com.andaily.infrastructure.user.DeveloperRepositoryMyBatis.developerMap"/>-->
-        <!--</discriminator>-->
     </resultMap>
 
-
-    <select id="findByGuid" parameterType="String" resultMap="userMap">
-         select * from user where  guid = #{guid}
-	</select>
-
-    <select id="findUserById" parameterType="Integer" resultMap="userMap">
-         select * from user where id = #{id}
+    <select id="findUserById" parameterType="String" resultMap="userMap">
+         select * from user where userId = #{userId}
 	</select>
 
     <select id="findByUsername" parameterType="String" resultMap="userMap">
          select * from user
          where username = #{username}
-         and archived = 0
 	</select>
 
 
-    <insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-        insert into user(guid,archived,create_time,email,password,username,phone, last_login_time)
-        values
-        (#{guid},#{archived},#{createTime},#{email},#{password},#{username}, #{phone}, #{lastLoginTime})
+    <insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="userId">
+        insert  into `user`(userId,username,nickname,userImage,age,gender,phoneNumber,email,userType,thirdPartyUserId,registerDate,password) 
+        values 
+        (#{userId},#{username},#{nickname},#{userImage},#{age},#{gender},#{phoneNumber},#{email},#{userType},#{thirdPartyUserId},#{registerDate},#{password)
     </insert>
 
     <update id="updateUser" parameterType="User" flushCache="true">
         update user set
-        username = #{username},
+        nickname = #{nickname},
+        userImage = #{userImage},
+        age = #{age},
+        gender = #{gender},
+        phoneNumber = #{phoneNumber},
+        email = #{email},
         password = #{password},
-        phone = #{phone},
-        email = #{email}
-        where guid = #{guid}
+        where username = #{username}
     </update>
 
 </mapper>
