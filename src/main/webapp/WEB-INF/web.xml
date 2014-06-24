@@ -7,11 +7,6 @@
 
     <display-name>oauth2</display-name>
 
-    <distributable/>
-    <context-param>
-        <param-name>webAppRootKey</param-name>
-        <param-value>oauth2</param-value>
-    </context-param>
 
     <!--Encoding filter-->
     <filter>
@@ -42,33 +37,11 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- sitemesh filter-->
-    <filter>
-        <filter-name>sitemesh</filter-name>
-        <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>sitemesh</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <mime-mapping>
-        <extension>ico</extension>
-        <mime-type>image/vnd.microsoft.icon</mime-type>
-    </mime-mapping>
-
     <!--contextConfigLocation -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:spring/*.xml</param-value>
     </context-param>
-    <context-param>
-        <param-name>logbackConfigLocation</param-name>
-        <param-value>/WEB-INF/logback.xml</param-value>
-    </context-param>
-    <listener>
-        <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
-    </listener>
 
     <!-- Spring context listener -->
     <listener>

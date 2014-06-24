@@ -10,9 +10,6 @@ import com.rideo.app.oauth2.domain.User;
 import com.rideo.app.oauth2.domain.UserRepository;
 import com.rideo.app.oauth2.service.UserService;
 
-/**
- * @author Shengzhao Li
- */
 @Service("userService")
 public class UserServiceImpl implements UserService
 {

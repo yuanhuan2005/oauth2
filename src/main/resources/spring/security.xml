@@ -37,17 +37,6 @@
         <access-denied-handler ref="oauth2AccessDeniedHandler"/>
     </http>
 
-    <!--unity http configuration-->
-    <http pattern="/unity/**" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
-          access-decision-manager-ref="oauth2AccessDecisionManager">
-        <anonymous enabled="false"/>
-
-        <intercept-url pattern="/unity/**" access="ROLE_UNITY,SCOPE_READ"/>
-
-        <custom-filter ref="unityResourceServer" before="PRE_AUTH_FILTER"/>
-        <access-denied-handler ref="oauth2AccessDeniedHandler"/>
-    </http>
-
     <!--user http configuration-->
     <http pattern="/user/info" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
           access-decision-manager-ref="oauth2AccessDecisionManager">
@@ -63,9 +52,6 @@
                 class="org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter">
         <beans:property name="authenticationManager" ref="oauth2AuthenticationManager"/>
     </beans:bean>
-
-    <!--unity resource server filter-->
-    <oauth2:resource-server id="unityResourceServer" resource-id="unity-resource" token-services-ref="tokenServices"/>
 
     <!--user resource server filter-->
     <oauth2:resource-server id="userResourceServer" resource-id="user-resource" token-services-ref="tokenServices"/>
@@ -90,7 +76,7 @@
     </beans:bean>
     
 
-    <beans:bean id="requestFactory" class="com.rideo.app.oauth2.domain.CustomOAuth2RequestFactory">
+    <beans:bean id="requestFactory" class="org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory">
         <beans:constructor-arg index="0" ref="clientDetailsService"/>
     </beans:bean>
 

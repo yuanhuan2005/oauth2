@@ -7,9 +7,6 @@ import com.rideo.app.oauth2.domain.OauthClientDetails;
 import com.rideo.app.oauth2.domain.OauthRepository;
 import com.rideo.app.oauth2.service.OauthService;
 
-/**
- * @author Shengzhao Li
- */
 @Service("oauthService")
 public class OauthServiceImpl implements OauthService
 {

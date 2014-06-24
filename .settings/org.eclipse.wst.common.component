@@ -6,6 +6,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="context-root" value="oauth2"/>
         <property name="java-output-path" value="/oauth2/target/classes"/>
-        <property name="component.exclusion.patterns" value="*/classes/oauth2.properties"/>
+        <property name="component.exclusion.patterns"/>
     </wb-module>
 </project-modules>

@@ -3,9 +3,6 @@ package com.rideo.app.oauth2.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author Shengzhao Li
- */
 public class OauthClientDetails implements Serializable
 {
 
