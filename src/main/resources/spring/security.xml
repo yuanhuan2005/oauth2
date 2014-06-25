@@ -56,21 +56,6 @@
     <!--user resource server filter-->
     <oauth2:resource-server id="userResourceServer" resource-id="user-resource" token-services-ref="tokenServices"/>
 
-    <!--Config ClientDetailsService-->
-    <!--<oauth2:client-details-service id="clientDetailsService">-->
-
-    <!--&lt;!&ndash;unity client&ndash;&gt;-->
-    <!--<oauth2:client client-id="unity-client" resource-ids="unity-resource"-->
-    <!--authorized-grant-types="password,authorization_code,refresh_token,implicit"-->
-    <!--secret="unity" authorities="ROLE_UNITY" scope="read,write"/>-->
-
-    <!--&lt;!&ndash;mobile client&ndash;&gt;-->
-    <!--<oauth2:client client-id="mobile-client" resource-ids="mobile-resource"-->
-    <!--authorized-grant-types="password,authorization_code,refresh_token,implicit"-->
-    <!--secret="mobile" authorities="ROLE_MOBILE" scope="read,write"/>-->
-
-    <!--</oauth2:client-details-service>-->
-
     <beans:bean id="clientDetailsService" class="org.springframework.security.oauth2.provider.client.JdbcClientDetailsService">
         <beans:constructor-arg index="0" ref="dataSource"/>
     </beans:bean>
