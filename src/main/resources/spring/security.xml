@@ -37,17 +37,6 @@
         <access-denied-handler ref="oauth2AccessDeniedHandler"/>
     </http>
 
-    <!--user http configuration-->
-    <http pattern="/user/info" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
-          access-decision-manager-ref="oauth2AccessDecisionManager">
-        <anonymous enabled="false"/>
-
-        <intercept-url pattern="/user/info" access="ROLE_UNITY,SCOPE_READ"/>
-
-        <custom-filter ref="userResourceServer" before="PRE_AUTH_FILTER"/>
-        <access-denied-handler ref="oauth2AccessDeniedHandler"/>
-    </http>
-
     <beans:bean id="clientCredentialsTokenEndpointFilter"
                 class="org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter">
         <beans:property name="authenticationManager" ref="oauth2AuthenticationManager"/>
@@ -73,7 +62,13 @@
 
     <beans:bean id="tokenServices" class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
         <beans:property name="tokenStore" ref="tokenStore"/>
-        <beans:property name="supportRefreshToken" value="false"/>
+        <beans:property name="supportRefreshToken" value="true"/>
+        
+        <!-- refreshToken有效期：3个月 -->
+        <beans:property name="refreshTokenValiditySeconds" value="7776000"/>
+        
+        <!-- accessToken有效期：7天 -->
+        <beans:property name="accessTokenValiditySeconds" value="604800"/>
     </beans:bean>
 
     <!--<global-method-security pre-post-annotations="enabled" proxy-target-class="true">-->
