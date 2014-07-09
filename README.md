@@ -1,27 +1,8 @@
-oauth2
-======
+# Introduction
 
 OAuth2 Server bases on Java Spring Security and MySql.
 
-
-# Introduction
-
-This is the user guide for the support for OAuth 2.0. For OAuth 1.0, everything is different, so see it's user guide.
-
-This user guide is divided into two parts, the first for the OAuth 2.0 provider, the second for the OAuth 2.0 client. (Note that support for OAuth 2.0 client is still under development, so that section isn't written yet.) Here's a TOC for quick navigation:
-
-* OAuth 2.0 Provider
-  * Managing Clients
-  * Managing Tokens
-  * OAuth 2.0 Provider Request Filters
-  * Configuration
-  * User Agent Flow
-  * Web Server Flow
-  * Device Flow
-  * Username Password Flow
-  * Client Credentials Flow
-  * Assertion Flow
-* OAuth 2.0 Client
+This is the user guide for the support for OAuth 2.0.
 
 
 # OAuth 2.0 Provider
@@ -29,13 +10,13 @@ This user guide is divided into two parts, the first for the OAuth 2.0 provider,
 The OAuth 2.0 provider is responsible for managing the OAuth 2.0 clients that can access its protected resources on behalf of a user. The provider does this by managing and verifying the OAuth 2.0 tokens that can be used to access the protected resources. Where applicable, the provider must also supply an interface for the user to confirm that a client can be granted access to the protected resources (i.e. a confirmation page).
 
 
-# Managing Clients
+## Managing Clients
 
 The entry point into your database of clients is defined by the ClientDetailsService. You must define your own ClientDetailsService that will load ClientDetails by the client id. Note the existence of an in-memory implementation of ClientDetailsService.
 When implementing your ClientDetailsService consider returning instances of (or extending) BaseClientDetails.
 
 
-# Managing Tokens
+## Managing Tokens
 
 The OAuth2ProviderTokenServices interface defines the operations that are necessary to manage OAuth 2.0 tokens. Note the following:
 When an access token is created, the authentication must be stored so that the subsequent access token can reference it.
@@ -44,7 +25,7 @@ The access token is used to load the authentication that was used to authorize i
 When creating your OAuth2ProviderTokenServices implementation, you may want to consider extending the RandomValueOAuth2ProviderTokenServices which creates tokens via random value and handles everything except for the persistence of the tokens. There is also an in-memory implementation of the OAuth2ProviderTokenServices that may be suitable.
 
 
-# OAuth 2.0 Provider Request Filters
+## OAuth 2.0 Provider Request Filters
 
 The requests for the tokens and for access to protected resources are handled by standard Spring Security request filters. The following filters are required in the Spring Security filter chain in order to implement OAuth 2.0:
   * The OAuth2AuthorizationFilter is used to service the request for an access token. Default URL: /oauth/authorizen.
@@ -53,7 +34,7 @@ The requests for the tokens and for access to protected resources are handled by
 Other filters are applied according to the different OAuth 2.0 flows.
 
 
-# Provider Configuration
+## Provider Configuration
 
 For the OAuth 2.0 provider, configuration is simplified using the custom spring configuration elements. The schema for these elements rests at http://spring-security-oauth.codehaus.org/schema/spring-security-oauth2-1.0.xsd. The namespace is http://spring-security-oauth.codehaus.org/oauth2/1.0.
 
@@ -72,12 +53,7 @@ The client-details-service element is used to define an in-memory implementation
   * authorities: Authorities that are granted to the client (comma-separated).
 
 
-# User Agent Flow
-
-Not implemented here. See this project's new location.
-
-
-# Web Server Flow
+## Web Server Flow
 
 The Web Server OAuth 2.0 flow is designed for the situation where both the OAuth client and the OAuth provider are two online web applications. For details, see section 3.6 of the spec. It is configured using the web_server configuration element of the flows configuration element of the provider.
 
