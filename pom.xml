@@ -17,9 +17,7 @@
         <spring.security.version>3.2.3.RELEASE</spring.security.version>
         <aspectj.version>1.6.10</aspectj.version>
         <mybatis.version>3.2.1</mybatis.version>
-
     </properties>
-
 
     <dependencies>
         <!-- provided dependency -->
