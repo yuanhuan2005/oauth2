@@ -2,9 +2,6 @@ package com.rideo.app.oauth2.infrastructure;
 
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 
-/**
- * @author Shengzhao Li
- */
 public abstract class PasswordHandler
 {
 
