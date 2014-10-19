@@ -26,7 +26,7 @@
 
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
-
+    
     <http pattern="/oauth/token" create-session="stateless" authentication-manager-ref="oauth2AuthenticationManager"
           entry-point-ref="oauth2AuthenticationEntryPoint">
         <intercept-url pattern="/oauth/token" access="IS_AUTHENTICATED_FULLY"/>
@@ -127,15 +127,15 @@
                 class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler"/>
 
 
-    <http access-denied-page="/login.jsp?authorization_error=2" disable-url-rewriting="true"
-          authentication-manager-ref="authenticationManager">
-        <intercept-url pattern="/oauth/**" access="ROLE_USER,ROLE_UNITY,ROLE_MOBILE"/>
-        <intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <!-- URI Auth Config -->
+    <http pattern="/**" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
+          access-decision-manager-ref="oauth2AccessDecisionManager">
+        <anonymous enabled="false"/>
 
-        <form-login authentication-failure-url="/login.jsp?authentication_error=1" default-target-url="/index.jsp"
-                    login-page="/login.jsp" login-processing-url="/login.do"/>
-        <logout logout-success-url="/index.jsp" logout-url="/logout.do"/>
-        <anonymous/>
+        <intercept-url pattern="/user/info" access="ROLE_UNITY,SCOPE_READ"/>
+
+        <custom-filter ref="userResourceServer" before="PRE_AUTH_FILTER"/>
+        <access-denied-handler ref="oauth2AccessDeniedHandler"/>
     </http>
 
 
